@@ -5,12 +5,16 @@ import { excel,upload } from "../../components/SVG";
 const Index = () => {
   const input = useRef();
 const submit = useRef();
+const [loading,setLoading] = useState()
 const [file,setFile] = useState()
   const preventDefault = (e) => {
     e.stopPropagation();
     e.preventDefault();
   };
-
+const handleRemove = ()=>{
+  setFile(null)
+  input.current.value = null;
+}
   const handleFile = (e) => {
     preventDefault(e);
     const files = e.dataTransfer.files;
@@ -18,8 +22,6 @@ const [file,setFile] = useState()
     if (files.length > 0) {
       const file = files[0];
       console.log(file.name);
-
-      // Set the selected files to the file input
       input.current.files = files;
     }
   };
@@ -37,10 +39,18 @@ const [file,setFile] = useState()
   };
   const handleSubmit = (e)=>{
     e.preventDefault()
-    if(!input.current.files[0]){
-      window.alert("Please select a file first")
+    if (!input.current.files[0]) {
+      window.alert("Please select a file first");
       return;
     }
+    setLoading(true);
+    setTimeout(()=>{
+      setLoading(false)
+      setFile(null)
+      input.current.value = null;
+      window.alert('Upload complete')
+    },2000)
+
     console.log(input.current.files[0])
     const files = JSON.parse(localStorage.getItem("files")) || [];
     files.push({
@@ -60,16 +70,27 @@ const [file,setFile] = useState()
         id={styles.upload}
       >
         {excel}
-        {file?<p>{file}</p>:null}
-        <p>
-          Drop your excel sheet here or{" "}
-          <span
-            onClick={handleBrowseClick}
-            style={{ color: "#605BFF", cursor: "pointer" }}
-          >
-            browse
-          </span>
-        </p>
+        {file ? (
+          <>
+            <p>{file}</p>
+            <p
+              onClick={handleRemove}
+              style={{ cursor: "pointer", color: "red" }}
+            >
+              Remove
+            </p>
+          </>
+        ) : (
+          <p>
+            Drop your excel sheet here or{" "}
+            <span
+              onClick={handleBrowseClick}
+              style={{ color: "#605BFF", cursor: "pointer" }}
+            >
+              browse
+            </span>
+          </p>
+        )}
         <form onSubmit={handleSubmit}>
           <input
             name="file"
@@ -86,15 +107,19 @@ const [file,setFile] = useState()
           />
         </form>
       </div>
-      <button
-        onClick={() => {
-          submit.current.click();
-        }}
-        id={styles.submitter}
-        type="submit"
-      >
-        {upload} Upload
-      </button>
+      {loading ? (
+        <button id={styles.submitter}>...</button>
+      ) : (
+        <button
+          onClick={() => {
+            submit.current.click();
+          }}
+          id={styles.submitter}
+          type="submit"
+        >
+          {upload} Upload
+        </button>
+      )}
     </div>
   );
 };
