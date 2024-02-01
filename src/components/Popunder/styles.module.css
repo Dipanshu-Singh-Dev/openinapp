@@ -1,0 +1,18 @@
+#container{
+    position: absolute;
+    width: 85%;
+    border-radius: 12px;
+    padding: 8px;
+    gap: 16px;
+    background: #FFFFFF;
+    z-index: 1;
+    margin-right: 32px;
+    & p{
+        padding: 6px 12px;
+        width: 100%;
+        border: none;
+    }
+    & p:hover{
+        background-color: #F5F5F5;
+    }
+}
