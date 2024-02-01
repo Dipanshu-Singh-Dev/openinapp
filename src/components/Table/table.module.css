@@ -21,7 +21,7 @@
             outline: none;
         }
     
-        & #tags {
+        & .tags {
             display: flex;
             flex-wrap: wrap;
             gap: 4px;
@@ -72,6 +72,9 @@
         text-align: left;
     }
 }
+.plus{
+    display: none;
+}
 
 .tableRow {
     background-color: #ffffff;
@@ -90,6 +93,9 @@
         letter-spacing: 0px;
         text-align: left;
     }
+}
+.down{
+    display: none;
 }
 
 .col {
@@ -111,6 +117,9 @@
 .col4 {
     flex-basis: 25%;
     margin-left: 0;
+        display: flex;
+            align-items: center;
+            justify-content: center;
     & p{
         position: relative;
         cursor: pointer;
@@ -126,28 +135,43 @@
 
 .col5 {
     flex-basis: 25%;
+    display: flex;
+                justify-content: center;
+    align-items: center;
 }
 
-@media all and (max-width: 767px) {
-    .tableHeader {
+@media screen and (max-width: 767px) {
+    
+.container{
+    & .tableHeader{
+        display: flex;
+        align-items: flex-start;
+        & p{
+            font-size: 10px !important;
+        }
+    }
+    width: 100%;
+    & .plus {
+        cursor: pointer;
+            display: block;
+        }
+    
+    &  .select {
+            display: none;
+        }
+    & .tags{
         display: none;
     }
-
-    .tableRow {
+    & .down{
+        
+        cursor: pointer;
         display: block;
     }
-
-    .col {
-        flex-basis: 100%;
-        display: flex;
-        padding: 10px 0;
-    }
-
-    .col:before {
-        color: #6c7a89;
-        padding-right: 10px;
-        content: attr(data-label);
-        flex-basis: 50%;
-        text-align: right;
-    }
+}
+#tableContainer{
+    overflow: auto;
+}
+.tableRow{
+    padding: 4px;
+}
 }
