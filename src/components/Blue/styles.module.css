@@ -1,0 +1,41 @@
+#container{
+    width: 50vw;
+    color: black;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & img{
+        object-fit: crop;
+    }
+    margin: 0;
+}
+#bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: -1;
+}
+#content{
+    height: 80%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#title{
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 88px;
+    margin-left: 20%;
+    letter-spacing: 0em;
+    color : #FFFFFF;
+}
+#svgs{
+    width: 67%;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 40px;
+}
