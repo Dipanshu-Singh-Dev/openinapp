@@ -38,7 +38,7 @@ const Index = () => {
           </svg>
           Dashboard
         </p>
-        <p>
+        <p style={{ color: "#605BFF" }}>
           <svg
             width="24"
             height="24"
