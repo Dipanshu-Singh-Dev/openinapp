@@ -14,8 +14,9 @@ export const logo = (
       strokeWidth="6"
     />
   </svg>
-  
+
 );
+
 export const github = (
   <svg
     width="45"

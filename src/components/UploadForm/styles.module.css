@@ -1,5 +1,5 @@
 #container{
-    margin: 50px auto;
+    margin: 10vh auto 0 auto;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -8,7 +8,7 @@
 }
 #upload{
     margin: 16px 16px 21px 16px;
-    height:30vh;
+    height:25vh;
     width: 90%;
     border-radius: 8px;
     border: 1px dashed lightgray;
