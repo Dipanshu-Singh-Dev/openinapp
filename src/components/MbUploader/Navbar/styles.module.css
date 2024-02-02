@@ -1,0 +1,27 @@
+#container{
+
+  & div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    & #logo {
+          display: flex;
+          align-items: center;
+          font-family: Nunito;
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 27px;
+          letter-spacing: 0em;
+          text-align: left;
+   }
+   & #left{
+    gap: 30px;
+   }
+}

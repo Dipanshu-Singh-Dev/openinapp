@@ -3,7 +3,6 @@ import styles from "./styles.module.css";
 const Index = () => {
   return (
     <div id={styles.container}>
-    
       <p>Upload CSV</p>
       <div style={{ display: "flex", alignItems: "center", gap: "1.75vw" }}>
         <svg
