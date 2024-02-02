@@ -65,6 +65,8 @@
     border-radius: 3px;
     padding: 16px;
     & p{
+        width: 100%;
+        text-align: center;
         margin-bottom: 16px;
         font-family: Figtree, sans-serif;
         font-size: 14px;
@@ -117,15 +119,13 @@
 .col4 {
     flex-basis: 25%;
     margin-left: 0;
-        display: flex;
-            align-items: center;
-            justify-content: center;
+    display: flex;
+    align-items: center;
     & p{
+        width: 100%;
         position: relative;
         cursor: pointer;
         display: flex;
-        align-items: center;
-        justify-content: center;
         margin-right:32px;
         border: 1px solid #EBEBEB;
         padding: 6px 12px;
@@ -136,7 +136,7 @@
 .col5 {
     flex-basis: 25%;
     display: flex;
-                justify-content: center;
+    justify-content: center;
     align-items: center;
 }
 
