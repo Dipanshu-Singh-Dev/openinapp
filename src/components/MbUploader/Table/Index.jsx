@@ -13,7 +13,8 @@ const ResponsiveTable = () => {
       for (let key in prev) {
         prev[key] = false;
       }
-      return { ...prev,[i]:!prev[i] };
+      
+      return { ...prev,[i]:true };
     });
   };
   const togglePopunderTags = (i) => {

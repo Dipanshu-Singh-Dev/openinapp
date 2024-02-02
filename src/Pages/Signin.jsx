@@ -2,7 +2,7 @@ import React, { useEffect,useState } from 'react'
 import Blue from "../components/Blue/Index"
 import Login from "../components/Login/Index"
 import LoginMb from "../components/Login/Mb"
-import Header from "../components/Header"
+import Header from "../components/Header/Index"
 const Signin = () => {
   const [width,setWidth] = useState(window.screen.width);
   useEffect(() => {
