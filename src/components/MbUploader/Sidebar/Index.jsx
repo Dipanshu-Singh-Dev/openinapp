@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "./styles.module.css";
-const Index = ({handler}) => {
+const Index = ({ show, handler }) => {
   return (
-    <div id={styles.container}>
+    <div style={{ left: `${show ? "0" : "-100%"}` }} id={styles.container}>
       <div id={styles.top}>
         <p id={styles.logo}>
-          <svg      
-            width="42"
-            height="42"
+          <svg
+            width="26"
+            height="26"
             viewBox="0 0 42 42"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +22,7 @@ const Index = ({handler}) => {
           Base
         </p>
         <svg
-        onClick={handler}
+          onClick={handler}
           width="40"
           height="40"
           viewBox="0 0 40 40"
