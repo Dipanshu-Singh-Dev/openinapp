@@ -5,8 +5,7 @@ const Index = ({handler}) => {
     <div id={styles.container}>
       <div id={styles.top}>
         <p id={styles.logo}>
-          <svg
-          
+          <svg      
             width="42"
             height="42"
             viewBox="0 0 42 42"

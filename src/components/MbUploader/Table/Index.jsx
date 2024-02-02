@@ -3,35 +3,25 @@ import styles from "./styles.module.css";
 import data from "../../../data";
 import { v4 as uuidv4 } from "uuid";
 import Popunder from "../../Popunder/Index";
+import PopunderTags from "../PopunderTags/Index"
 const ResponsiveTable = () => {
   const [toggle, setToggle] = useState({});
   const [toggleTags, setToggleTags] = useState({});
   const [width, setWidth] = useState(window.screen.width);
   const togglePopunder = (i) => {
-    data.map((el, index) => {
-      toggle[index] = false;
-    });
     setToggle((prev) => {
-      console.log(prev);
       for (let key in prev) {
         prev[key] = false;
       }
-      prev[i] = !prev[i];
-      console.log(prev);
-      return { ...prev };
+      return { ...prev,[i]:!prev[i] };
     });
   };
   const togglePopunderTags = (i) => {
-    data.map((el, index) => {
-      toggleTags[index] = false;
-    });
-    setToggle((prev) => {
-      console.log(prev);
+    setToggleTags((prev) => {
       for (let key in prev) {
         prev[key] = false;
       }
-      prev[i] = !prev[i];
-      return { ...prev };
+      return { ...prev, [i]: !prev[i] };
     });
   };
   useEffect(() => {
@@ -39,6 +29,10 @@ const ResponsiveTable = () => {
       setWidth(window.innerWidth);
     };
     window.addEventListener("resize", handleResize);
+    data.map((el, index) => {
+      toggle[index] = false;
+      toggleTags[index] = false;
+    });
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -130,7 +124,7 @@ const ResponsiveTable = () => {
                   </svg>
                   {toggle[index] ? <Popunder handler={togglePopunder} /> : null}
                 </div>
-                <div className={`${styles.col} ${styles.col5}`}>
+                <div style={{ position: "relative" }} className={`${styles.col} ${styles.col5}`}>
                   <p
                     style={{ display: "relative" }}
                     className={`${styles.tags}`}
@@ -157,6 +151,9 @@ const ResponsiveTable = () => {
                     ))}
                   </p>
                   <svg
+                    onClick={() => {
+                      togglePopunderTags(index)
+                    }}
                     className={styles.down}
                     height={24}
                     viewBox="0 0 24 24"
@@ -179,6 +176,9 @@ const ResponsiveTable = () => {
                       ></path>{" "}
                     </g>
                   </svg>
+                  {toggleTags[index] ? (
+                    <PopunderTags handler={togglePopunderTags} />
+                  ) : null}
                 </div>
               </li>
             );
