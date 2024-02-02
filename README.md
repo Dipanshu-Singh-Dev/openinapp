@@ -1,8 +1,22 @@
-# React + Vite
+# OpeninApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- CSS Modules
+- OAuth
+
+## Features
+
+1. **Google Login**
+   - Working google login with @react-oauth/google
+
+2. **File Upload**
+   - Dummy file uploader to upload files
+
+3. **Table to Display Data**
+   - Implemented beautiful table with divs rather than Table element due to its limitations.
+
+4. **Responsiveness**
+   - All components are made for both PC and Mobile views.
