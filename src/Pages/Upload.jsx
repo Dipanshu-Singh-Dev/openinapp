@@ -4,18 +4,12 @@ import Sidebar from "../components/Sidebar/Index"
 import MbUploader from "../components/MbUploader/Index"
 import { useState, useEffect } from "react";
 const Upload = () => {
-  const [width, setWidth] = useState(window.screen.width);
+  const [width,setWidth] = useState(window.screen.width);
   useEffect(() => {
-    const handleResize = () => {
-      console.log(window.screen.width);
-      setWidth(window.screen.width);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  });
+    const handleResize = () => setWidth(window.screen.width);
+    const rev = setInterval(handleResize,100)
+    return () => clearInterval(rev);
+  },[])
   return (
     <div
       style={{
