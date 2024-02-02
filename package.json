@@ -10,7 +10,8 @@
     "preview": "vite preview"
   },
   "vercel" : {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" },{"source":"/upload" ,"destination":"/index.html"}],
+    "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+
 },
   "dependencies": {
     "@react-oauth/google": "^0.12.1",
