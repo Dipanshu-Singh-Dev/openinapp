@@ -12,8 +12,10 @@
         padding: 6px 12px;
         width: 100%;
         border: none;
+                border-radius: 8px;
     }
     & p:hover{
+        cursor: pointer;
         background-color: #F5F5F5;
     }
 }

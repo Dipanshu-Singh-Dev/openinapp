@@ -23,6 +23,7 @@ const Index = ({ show, handler }) => {
         </p>
         <svg
           onClick={handler}
+          style={{ cursor: "pointer" }}
           width="40"
           height="40"
           viewBox="0 0 40 40"
